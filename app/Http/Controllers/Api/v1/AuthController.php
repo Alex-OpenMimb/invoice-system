@@ -24,7 +24,7 @@ class AuthController extends Controller
         if (!$token) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Unauthorized',
+                'message' => 'Credenciales Invalidas',
             ], 401);
         }
 
@@ -57,7 +57,7 @@ class AuthController extends Controller
         $token = Auth::login($user);
         return response()->json([
             'status' => 'success',
-            'message' => 'User created successfully',
+            'message' => 'Usario creado éxitosamente',
             'user' => $user,
             'authorisation' => [
                 'token' => $token,
@@ -70,8 +70,8 @@ class AuthController extends Controller
     {
         Auth::logout();
         return response()->json([
-            'status' => 'success',
-            'message' => 'Successfully logged out',
+            'status'  => 'success',
+            'message' => 'Sesión cerrrada exitosamente!',
         ]);
     }
 
@@ -87,7 +87,5 @@ class AuthController extends Controller
         ]);
     }
 
-   public function test(){
-    return 'Hello';
-   }
+   
 }
