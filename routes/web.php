@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\v1\SomeController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
