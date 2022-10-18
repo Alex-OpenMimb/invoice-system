@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\v1\AuthController;
+use App\Http\Controllers\Api\v1\InvoiceController;
 use App\Http\Controllers\Api\v1\SomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,11 +35,12 @@ Route::group([
 
 Route::group([
     'middleware' => 'api',
-    'prefix'     => 'v1/auth'
+    'prefix'     => 'v1'
 
 ], function ($router) {
 
     Route::post('logout',       [AuthController::class,'logout']);
     Route::post('refresh',      [AuthController::class,'refresh']);
+    Route::post('store',        [InvoiceController::class,'store']);
     
 });
